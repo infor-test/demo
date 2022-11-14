@@ -9,8 +9,10 @@ environment {
   kishore = "*********************-${BUILD_NUMBER}************************"
   BUILD_VERSION = "MXL-${BUILD_NUMBER}"
   }
-	
-	stages {
+	parameters {
+            string(name: 'please enter your name', defaultValue: 'asdfasdf', description: 'this is test exmple')
+}
+       stages {
 		 stage('Build name') {
                     steps {
                         script {
