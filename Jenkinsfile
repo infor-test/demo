@@ -2,7 +2,7 @@ pipeline {
     agent { label 'demo'
 	}
 options {
-//timestamps()
+timestamps()
     buildDiscarder(logRotator(numToKeepStr: '4'))
   }
 environment {
@@ -49,10 +49,14 @@ environment {
 			    echo "@@@@@@@@@@@@@@@@@-${env.JAVA_HOME}"
 			    echo "!!!!!!!!!!!!!!!!!-${env.NODE_NAME}"
 			    echo "&&&&&&&&&&&&&&&&&&-${env.NODE_NAME}"
-			    build 'test'
-			    
             }
           }
+	       stage ('Trigger downstream job') {
+		       steps {
+			       echo "triggering downstream job.........."
+			       build 'test'
+		       }
+	       }
 	}
 	post {
 		always {
