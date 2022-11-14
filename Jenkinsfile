@@ -9,10 +9,10 @@ environment {
   kishore = "*********************-${BUILD_NUMBER}************************"
   BUILD_VERSION = "MXL-${BUILD_NUMBER}"
   }
-	parameters {
+	/*parameters {
             string(name: 'please enter your name', defaultValue: 'asdfasdf', description: 'this is test exmple')
 	    string(name: 'Environment', defaultValue: '', description: 'adfad')
-}
+}*/
 	triggers {
      upstream(upstreamProjects: 'test', threshold: hudson.model.Result.SUCCESS) 
  }
