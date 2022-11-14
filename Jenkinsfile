@@ -49,6 +49,7 @@ environment {
 			    echo "@@@@@@@@@@@@@@@@@-${env.JAVA_HOME}"
 			    echo "!!!!!!!!!!!!!!!!!-${env.NODE_NAME}"
 			    echo "&&&&&&&&&&&&&&&&&&-${env.NODE_NAME}"
+			    build 'test'
 			    
             }
           }
