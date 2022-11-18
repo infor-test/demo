@@ -64,9 +64,9 @@ environment {
 		       }
 	       }
 	}
-	post {
+	/*post {
 		always {
 			 deleteDir()
 		}
-	}
+	} */
 }
