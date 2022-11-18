@@ -7,6 +7,7 @@ timestamps()
   }
 environment {
   kishore = "*********************-${BUILD_NUMBER}************************"
+  myname = "apple"
   BUILD_VERSION = "MXL-${BUILD_NUMBER}"
   }
 	/*parameters {
@@ -52,12 +53,14 @@ environment {
 			    echo "@@@@@@@@@@@@@@@@@-${env.JAVA_HOME}"
 			    echo "!!!!!!!!!!!!!!!!!-${env.NODE_NAME}"
 			    echo "&&&&&&&&&&&&&&&&&&-${env.NODE_NAME}"
+			    echo "${myname}"
             }
           }
 	       stage ('Trigger downstream job') {
 		       steps {
 			       echo "triggering downstream job.........."
 			       //build 'test'
+			        echo "${myname}"
 		       }
 	       }
 	}
