@@ -5,7 +5,7 @@ pipeline {
 	
    // agent { label 'demo'
 	agent any
-	}
+	//}
 options {
 timestamps()
     buildDiscarder(logRotator(numToKeepStr: '4'))
