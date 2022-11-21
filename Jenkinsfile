@@ -1,4 +1,7 @@
 pipeline {
+	def testfunction {
+		echo "@@@@@@@@@@333#########4$$$$$$$$$$$$$$$55%%%%%%%%%%%%%%%%"
+	} // function end
     agent { label 'demo'
 	}
 options {
@@ -63,10 +66,15 @@ environment {
 			        echo "${myname}"
 		       }
 	       }
-	}
+	       stage ('call function') {
+		       steps {
+		       testfunction()
+		       }
+	       }
+	} // end of stages
 	/*post {
 		always {
 			 deleteDir()
 		}
 	} */
-}
+} // end of pipeline 
