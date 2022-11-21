@@ -3,7 +3,8 @@ def testfunction() {
 	} // function end
 pipeline {
 	
-    agent { label 'demo'
+   // agent { label 'demo'
+	agent any
 	}
 options {
 timestamps()
