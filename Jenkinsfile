@@ -1,7 +1,8 @@
-pipeline {
-	def testfunction() {
+def testfunction() {
 		echo "@@@@@@@@@@%%%%%%%%%%%%%%%%"
 	} // function end
+pipeline {
+	
     agent { label 'demo'
 	}
 options {
