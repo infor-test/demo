@@ -1,5 +1,5 @@
 pipeline {
-	def testfunction () {
+	def testfunction() {
 		echo "@@@@@@@@@@%%%%%%%%%%%%%%%%"
 	} // function end
     agent { label 'demo'
