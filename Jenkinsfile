@@ -55,7 +55,7 @@ environment {
 		}
 	    stage ('scm checkout') {
 		   steps {
-		      git branch: 'master', credentialsId: 'e24932a1-95ce-48d5-8787-56d43a0f2ba', url: 'https://github.com/infor-test/adtra-project.git'
+		      git branch: 'master', credentialsId: 'e24932a1-95ce-48d5-8787-56d43a0f2bab', url: 'https://github.com/infor-test/adtra-projec.git'
 		   }
 		}
 		stage ('2') {
