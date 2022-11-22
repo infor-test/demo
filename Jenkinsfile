@@ -100,7 +100,9 @@ environment {
 	post {
 		always {
 			 deleteDir()
+			failure {
 			 emailBuildIssue('FAIL', 'kishore.t533@gmail.com')
+			}
 		}
 	}
 } // end of pipeline 
