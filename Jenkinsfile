@@ -32,9 +32,11 @@ timestamps()
     buildDiscarder(logRotator(numToKeepStr: '4'))
   }
 environment {
-  kishore = "*********************-${BUILD_NUMBER}************************"
+  kishore = "Test-${BUILD_NUMBER}"
   myname = "apple"
   BUILD_VERSION = "MXL-${BUILD_NUMBER}"
+	DEFAULT_SUBJECT = "*************************"
+	DEFAULT_BUILD_CONTENT = "&&&&&&&&&&&&&&&&&&&&&&&&&&"
   }
 	/*parameters {
             string(name: 'please enter your name', defaultValue: 'asdfasdf', description: 'this is test exmple')
