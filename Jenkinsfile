@@ -55,7 +55,7 @@ environment {
 		}
 	    stage ('scm checkout') {
 		   steps {
-		      git branch: 'master', credentialsId: 'e24932a1-95ce-48d5-8787-56d43a0f2bab', url: 'https://github.com/infor-test/adtra-project.git'
+		      git branch: 'master', credentialsId: 'e24932a1-95ce-48d5-8787-56d43a0f2ba', url: 'https://github.com/infor-test/adtra-project.git'
 		   }
 		}
 		stage ('2') {
@@ -75,7 +75,7 @@ environment {
                     steps {
                         echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
 			    echo "My job name is ${env.JOB_NAME}"
-			    echo "++++++++++++++++-${env.BUILD_TAG}
+			    echo "++++++++++++++++-${env.BUILD_TAG}"
 			    echo ">>>>>>>>>>>>>>>>-${env.BUILD_URL}"
 			    echo "#################-${env.EXECUTOR_NUMBER}"
 			    echo "@@@@@@@@@@@@@@@@@-${env.JAVA_HOME}"
