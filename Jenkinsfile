@@ -1,6 +1,27 @@
 def testfunction() {
 		echo "@@@@@@@@@@%%%%%%%%%%%%%%%%"
 	} // function end
+def emailBuildIssue(buildResult, mailTo) {
+
+    if ("${buildResult}" == "FAIL") {
+        emailext (
+            to: "${mailTo}",
+            attachLog: true,
+            subject: "${DEFAULT_SUBJECT} ${buildResult}",
+            body: """<p> ${DEFAULT_BUILD_CONTENT} : ${BUILD_NUMBER} </p>
+                     <p> Jenkins Job: ${BUILD_URL}""",
+            mimeType: 'text/html',
+        )
+    } else {
+        emailext (
+            to: "${mailTo}",
+            subject: "${DEFAULT_SUBJECT} ${buildResult}",
+            body: """<p> ${DEFAULT_BUILD_CONTENT} : ${BUILD_NUMBER} </p>
+                     <p> Jenkins Job: ${BUILD_URL}""",
+            mimeType: 'text/html',
+        )
+    }
+}
 pipeline {
 	
    // agent { label 'demo'
@@ -77,6 +98,7 @@ environment {
 	/*post {
 		always {
 			 deleteDir()
+			 emailBuildIssue(FAIL, kishore.t533@gmail.com)
 		}
 	} */
 } // end of pipeline 
