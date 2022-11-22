@@ -95,10 +95,10 @@ environment {
 		       }
 	       }
 	} // end of stages
-	/*post {
+	post {
 		always {
 			 deleteDir()
 			 emailBuildIssue(FAIL, kishore.t533@gmail.com)
 		}
-	} */
+	}
 } // end of pipeline 
