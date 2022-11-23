@@ -93,7 +93,7 @@ environment {
 			       [
                                           [$class: 'SimpleString', name: 'sampleparameter', value: env.apple],   
 				       ] */
-			       build job: 'test', parameters: [[$class: 'SimpleString', name: 'param1', value: env.myname ]]
+			       build job: 'test', parameters: [[$class: 'StringParameterValue', name: 'testest', value: env.myname ]]
 		       }
 	       }
 	       stage ('call function') {
