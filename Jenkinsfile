@@ -89,10 +89,11 @@ environment {
 			       echo "triggering downstream job.........."
 			       //build 'test'
 			        echo "${myname}"
-			       build 'test', parameterFactories :
+			       /*build 'test', parameterFactories :
 			       [
                                           [$class: 'SimpleString', name: 'sampleparameter', value: env.apple],   
-				       ]
+				       ] */
+			       build job: 'test', parameters: [[$class: 'StringParameterValue', name: 'param1', value: "env.myname" ]]
 		       }
 	       }
 	       stage ('call function') {
