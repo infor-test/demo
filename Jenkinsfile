@@ -35,8 +35,8 @@ environment {
   kishore = "Test-${BUILD_NUMBER}"
   myname = "apple"
   BUILD_VERSION = "MXL-${BUILD_NUMBER}"
-	DEFAULT_SUBJECT = "*************************"
-	DEFAULT_BUILD_CONTENT = "&&&&&&&&&&&&&&&&&&&&&&&&&&"
+  DEFAULT_SUBJECT = "test"
+  DEFAULT_BUILD_CONTENT = "&&&&&&&&&&&&&&&&&&&&&&&&&&"
   }
 	/*parameters {
             string(name: 'please enter your name', defaultValue: 'asdfasdf', description: 'this is test exmple')
@@ -55,7 +55,7 @@ environment {
 		}
 	    stage ('scm checkout') {
 		   steps {
-		      git branch: 'master', credentialsId: 'e24932a1-95ce-48d5-8787-56d43a0f2bab', url: 'https://github.com/infor-test/adtra-projec.git'
+		      git branch: 'master', credentialsId: 'e24932a1-95ce-48d5-8787-56d43a0f2bab', url: 'https://github.com/infor-test/adtra-project.git'
 		   }
 		}
 		stage ('2') {
@@ -89,6 +89,8 @@ environment {
 			       echo "triggering downstream job.........."
 			       //build 'test'
 			        echo "${myname}"
+			       build 'test', parameterFactories :
+                                          [$class: 'SimpleString', name: 'sampleparameter', value: env.apple],            
 		       }
 	       }
 	       stage ('call function') {
