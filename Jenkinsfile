@@ -90,7 +90,9 @@ environment {
 			       //build 'test'
 			        echo "${myname}"
 			       build 'test', parameterFactories :
-                                          [$class: 'SimpleString', name: 'sampleparameter', value: env.apple],            
+			       [
+                                          [$class: 'SimpleString', name: 'sampleparameter', value: env.apple],   
+				       ]
 		       }
 	       }
 	       stage ('call function') {
