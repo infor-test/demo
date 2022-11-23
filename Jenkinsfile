@@ -41,10 +41,10 @@ environment {
 	/*parameters {
             string(name: 'please enter your name', defaultValue: 'asdfasdf', description: 'this is test exmple')
 	    string(name: 'Environment', defaultValue: '', description: 'adfad')
-}*/
+}
 	triggers {
      upstream(upstreamProjects: 'test', threshold: hudson.model.Result.SUCCESS) 
- }
+ }*/
        stages {
 		 stage('Build name') {
                     steps {
